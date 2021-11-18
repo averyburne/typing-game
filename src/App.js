@@ -1,20 +1,20 @@
 import React, { useState, useEffect} from 'react';
 import Words from './components/Words.js'
 import Container from './components/Container.js'
-import Typerace from './components/Typeracer.js'
 import './App.css';
 import Typeracer from './components/Typeracer.js';
 
-function App() {
+const App = () => {
   const [ word, setWord ] = useState(Words)
   const [ newWord, setNewWord ] = useState(word[0])
-  const [ disabled, setDisabled ] = userState(true)
+  const [ disabled, setDisabled ] = useState(true)
   const [ currentResults, setCurrentResults ] = useState([])
-  const [ wrontResults, setWrongResults ] = useState([])
+  const [ wrongResults, setWrongResults ] = useState([])
   const [ correctCount, setCorrectCount ] = useState([])
   const [ time, setTime ] = useState(30)
   const [ inputValue, setInputValue ] = useState('')
-  const [ animation, setAnimation ] = userState(null)
+  const [ animation, setAnimation ] = useState(null)
+  console.log(Container)
 
   let randomWord = Math.floor(Math.random() * word.length)
 

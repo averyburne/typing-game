@@ -7,7 +7,7 @@ const Typeracer = (props) => {
     return(
         <div className='typeracer'>
             <div className='wordOutput'>
-                <p>{newWork}</p>
+                <p>{newWord}</p>
             </div>
             <div className='time'>
                 <p>{time}</p>

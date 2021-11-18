@@ -1,7 +1,9 @@
 import React, { useState, useEffect} from 'react';
 import Words from './components/Words.js'
 import Container from './components/Container.js'
+import Typerace from './components/Typeracer.js'
 import './App.css';
+import Typeracer from './components/Typeracer.js';
 
 function App() {
   const [ word, setWord ] = useState(Words)
@@ -18,7 +20,16 @@ function App() {
 
   return (
     <div className="App">
-      <Container></Container>
+      <Container>
+        <Typeracer 
+          newWord = {newWord}
+          inputValue = {inputValue}
+          setInputValue = {setInputValue}
+          disabled = {disabled}
+          time = {time}
+          animation = {animation}
+        />
+      </Container>
     </div>
   );
 }

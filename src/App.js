@@ -17,6 +17,14 @@ const App = () => {
   const [ inputValue, setInputValue ] = useState('')
   const [ animation, setAnimation ] = useState(null)
 
+  const checkAnswer = () => {
+    if(inputValue.trim() === newWord) {
+      setCorrectResults(prevCorrect => [...prevCorrect, newWord])
+      setCountCorrect((prevCount) => prevCount + 1)
+    }
+    setWrongResults((prevWrong) => [...prevWrong, inputValue])
+  }
+
 
   return (
     <div className="App">

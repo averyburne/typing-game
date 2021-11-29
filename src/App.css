@@ -18,7 +18,7 @@ button {
   color: #fff;
   font-size: 24px;
   font-weight: 600;
-  width: 25%;
+  width: 35%;
   line-height: 1;
   height: 100%;
   cursor: pointer;
@@ -30,6 +30,7 @@ button {
   margin: auto;
   display: flex;
   justify-content: space-between;
+  border: 1px solid black;
 }
 
 /* App Styles */
@@ -37,7 +38,7 @@ button {
 .App {
   width: 100%;
   min-height: 100vh;
-  background: #111;
+  background: white;
   display: flex;
 }
 

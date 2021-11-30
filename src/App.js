@@ -21,10 +21,45 @@ const App = () => {
     if(inputValue.trim() === newWord) {
       setCorrectResults(prevCorrect => [...prevCorrect, newWord])
       setCountCorrect((prevCount) => prevCount + 1)
+      return
     }
     setWrongResults((prevWrong) => [...prevWrong, inputValue])
   }
 
+  const handleInput = e => {
+    if(e.charCode === 13 && inputValue.trim() !== '') {
+      checkAnswer()
+      setNewWord(word[randomWord])
+      setInputValue('')
+    }
+  }
+
+  const handleStart = () => {
+    setDisabled(!disabled)
+    setCorrectResults([])
+    setWrongResults([])
+    setCountCorrect(0)
+    setInputValue('')
+  }
+
+  useEffect(() => {
+    if(time <= 30 && time !== 0 && disabled === false) {
+      setTimeout(() => setTime(prevTime => prevTime - 1), 1000)
+    } else if (disabled) {
+      setTime(30)
+      setAnimation(null)
+    } else if (time === 0) {
+      setDisabled(true)
+    }
+
+    if(time <= 10) {
+      setAnimation("scaleNumber 2s infinite")
+    }
+  }, [disabled, time])
+
+  useEffect(() => {
+    setNewWord(word[randomWord])
+  }, [])
 
   return (
     <div className="App">
@@ -36,6 +71,8 @@ const App = () => {
           disabled = {disabled}
           time = {time}
           animation = {animation}
+          handleInput = {handleInput}
+          handleStart = {handleStart}
         />
       </Container>
         <Results

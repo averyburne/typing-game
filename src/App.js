@@ -33,9 +33,11 @@ const App = () => {
       setInputValue('')
     }
   }
-
+  console.log(disabled)
   const handleStart = () => {
+    console.log(1, disabled)
     setDisabled(!disabled)
+    console.log(2, disabled)
     setCorrectResults([])
     setWrongResults([])
     setCountCorrect(0)

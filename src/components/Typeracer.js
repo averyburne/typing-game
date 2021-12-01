@@ -9,7 +9,7 @@ const Typeracer = (props) => {
             time, 
             animation,
             handleInput,
-            handleStart,
+            handleStart
          } = props
 
     return(

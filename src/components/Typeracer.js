@@ -28,7 +28,7 @@ const Typeracer = (props) => {
                 onChange={(e) => setInputValue(e.target.value)}
                 placeholder={disabled ? '' : 'Start Typing'}
                 type='text'/>
-                <Button handleStart={handleStart} disbaled={disabled}/>
+                <Button handleStart={handleStart} disabled={disabled}/>
             </div>
         </div>
     )

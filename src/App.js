@@ -33,7 +33,7 @@ const App = () => {
       setInputValue('')
     }
   }
-  console.log(disabled)
+
   const handleStart = () => {
     console.log(1, disabled)
     setDisabled(!disabled)

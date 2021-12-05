@@ -1,6 +1,10 @@
 import React from 'react'
 
 const Results = ({ correctResults, wrongResults, countCorrect }) => {
+    console.log(correctResults)
+
+    const correctJSX = correctResults.map((word, index) => <div className='row' key={index}><p>{word}</p></div>)
+    console.log(correctJSX)
     return(
         <div className='results'>
             <div className='title'>
@@ -8,6 +12,7 @@ const Results = ({ correctResults, wrongResults, countCorrect }) => {
             </div>
             <div className='resultsCounter'>
                 <div className="correctResults">
+                    {correctJSX}
                     {correctResults.map((correctWord, index) => {
                         <div key={index} className='row'>
                             <p>{correctWord}</p>
@@ -15,7 +20,7 @@ const Results = ({ correctResults, wrongResults, countCorrect }) => {
                     })}
                 </div>
                 <div className="wrongResults">
-                    {correctResults.map((wrongWord, index) => {
+                    {wrongResults.map((wrongWord, index) => {
                         <div key={index} className='row'>
                             <p>{wrongWord}</p>
                         </div>

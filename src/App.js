@@ -10,7 +10,7 @@ const App = () => {
   let randomWord = Math.floor(Math.random() * word.length)
   const [ newWord, setNewWord ] = useState(word[randomWord])
   const [ disabled, setDisabled ] = useState(true)
-  const [ correctResults, setCorrectResults ] = useState([])
+  const [ correctResults, setCorrectResults ] = useState(['hello', 'general', 'kenobi'])
   const [ wrongResults, setWrongResults ] = useState([])
   const [ countCorrect, setCountCorrect ] = useState(0)
   const [ time, setTime ] = useState(30)
@@ -20,6 +20,7 @@ const App = () => {
   const checkAnswer = () => {
     if(inputValue.trim() === newWord) {
       setCorrectResults(prevCorrect => [...prevCorrect, newWord])
+      console.log(correctResults)
       setCountCorrect((prevCount) => prevCount + 1)
       return
     }

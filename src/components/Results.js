@@ -1,16 +1,14 @@
 import React from 'react'
 
 const Results = ({ correctResults, wrongResults, countCorrect }) => {
-    console.log(correctResults)
 
     const correctJSX = correctResults.map((word, index) => <div className='row' key={index}><p>{word}</p></div>)
-    console.log(correctJSX)
     return(
         <div className='results'>
             <div className='title'>
                 <p>Correct Answers: {countCorrect}</p>
             </div>
-            <div className='resultsCounter'>
+            <div className='resultsContainer'>
                 <div className="correctResults">
                     {correctJSX}
                     {correctResults.map((correctWord, index) => {

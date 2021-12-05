@@ -10,7 +10,7 @@ const App = () => {
   let randomWord = Math.floor(Math.random() * word.length)
   const [ newWord, setNewWord ] = useState(word[randomWord])
   const [ disabled, setDisabled ] = useState(true)
-  const [ correctResults, setCorrectResults ] = useState(['hello', 'general', 'kenobi'])
+  const [ correctResults, setCorrectResults ] = useState([])
   const [ wrongResults, setWrongResults ] = useState([])
   const [ countCorrect, setCountCorrect ] = useState(0)
   const [ time, setTime ] = useState(30)

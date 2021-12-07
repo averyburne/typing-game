@@ -11,9 +11,11 @@ const Results = ({ correctResults, wrongResults, countCorrect }) => {
             </div>
             <div className='resultsContainer'>
                 <div className="correctResults">
+                    <p>Correct</p>
                     {correctJSX}
                 </div>
                 <div className="wrongResults">
+                    <p>Wrong</p>
                     {wrongJSX}
                 </div>
             </div>
